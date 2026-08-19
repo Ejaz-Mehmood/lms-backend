@@ -2,13 +2,13 @@
 // Usage: node seeders/05-seed-chat-faq.js  (from /var/www/lms-backend)
 // Assumes admins, teachers and students are already seeded (scripts 01-03)
 
-require('./models/association');
-const sequelize      = require('./utils/database');
-const ChatGroup      = require('./models/ChatGroup');
-const ChatGroupMember= require('./models/ChatGroupMember');
-const ChatMessage    = require('./models/ChatMessage');
-const FAQ            = require('./models/FAQ');
-const CourseDetails  = require('./models/CourseDetails');
+require('../models/association');
+const sequelize      = require('../utils/database');
+const ChatGroup      = require('../models/ChatGroup');
+const ChatGroupMember= require('../models/ChatGroupMember');
+const ChatMessage    = require('../models/ChatMessage');
+const FAQ            = require('../models/FAQ');
+const CourseDetails  = require('../models/CourseDetails');
 
 const pick  = (arr) => arr[Math.floor(Math.random() * arr.length)];
 const ago   = (days, hrs=0, mins=0) => {

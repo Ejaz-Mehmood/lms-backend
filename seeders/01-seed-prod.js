@@ -2,17 +2,17 @@
 // Usage: node seeders/01-seed-prod.js  (from /var/www/lms-backend)
 
 const bcrypt = require('bcryptjs');
-require('./models/association');
-const sequelize = require('./utils/database');
-const Admin       = require('./models/Admin');
-const Roles       = require('./models/Roles');
-const Plan        = require('./models/Plan');
-const Course      = require('./models/Course');
-const Teacher     = require('./models/Teacher');
-const Student     = require('./models/Student');
-const Parent      = require('./models/Parent');
-const CourseDetails     = require('./models/CourseDetails');
-const EnrolledStudents  = require('./models/EnrolledStudents');
+require('../models/association');
+const sequelize = require('../utils/database');
+const Admin       = require('../models/Admin');
+const Roles       = require('../models/Roles');
+const Plan        = require('../models/Plan');
+const Course      = require('../models/Course');
+const Teacher     = require('../models/Teacher');
+const Student     = require('../models/Student');
+const Parent      = require('../models/Parent');
+const CourseDetails     = require('../models/CourseDetails');
+const EnrolledStudents  = require('../models/EnrolledStudents');
 
 const h = (p) => bcrypt.hash(p, 12);
 

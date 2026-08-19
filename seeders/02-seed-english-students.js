@@ -2,14 +2,14 @@
 // Usage: node seeders/02-seed-english-students.js  (from /var/www/lms-backend)
 
 const bcrypt = require('bcryptjs');
-require('./models/association');
-const sequelize        = require('./utils/database');
-const Teacher          = require('./models/Teacher');
-const Student          = require('./models/Student');
-const Plan             = require('./models/Plan');
-const CourseDetails    = require('./models/CourseDetails');
-const EnrolledStudents = require('./models/EnrolledStudents');
-const TeacherStudent   = require('./models/TeacherStudent');
+require('../models/association');
+const sequelize        = require('../utils/database');
+const Teacher          = require('../models/Teacher');
+const Student          = require('../models/Student');
+const Plan             = require('../models/Plan');
+const CourseDetails    = require('../models/CourseDetails');
+const EnrolledStudents = require('../models/EnrolledStudents');
+const TeacherStudent   = require('../models/TeacherStudent');
 
 const h = (p) => bcrypt.hash(p, 12);
 
@@ -20,7 +20,7 @@ async function run() {
   const [standard] = await Plan.findOrCreate({ where: { name: 'Standard' }, defaults: { name: 'Standard', price: 25, billingCycle: 'monthly', durationDays: 30, description: 'Standard plan', features: [] } });
   const [premium]  = await Plan.findOrCreate({ where: { name: 'Premium' },  defaults: { name: 'Premium',  price: 40, billingCycle: 'monthly', durationDays: 30, description: 'Premium plan', features: [] } });
 
-  const Course = require('./models/Course');
+  const Course = require('../models/Course');
   const courses = await Course.findAll();
   const nazra    = courses.find(c => c.courseName.includes('Nazra'))    || courses[0];
   const tajweed  = courses.find(c => c.courseName.includes('Tajweed'))  || courses[1];

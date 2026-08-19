@@ -4,12 +4,12 @@
 // Note: profile images (parent-m-60..81.jpg, parent-f-60..62.jpg) must be in resources/profiles/
 
 const bcrypt = require('bcryptjs');
-require('./models/association');
-const sequelize       = require('./utils/database');
-const Student         = require('./models/Student');
-const Parent          = require('./models/Parent');
-const CourseDetails   = require('./models/CourseDetails');
-const TeacherStudent  = require('./models/TeacherStudent');
+require('../models/association');
+const sequelize       = require('../utils/database');
+const Student         = require('../models/Student');
+const Parent          = require('../models/Parent');
+const CourseDetails   = require('../models/CourseDetails');
+const TeacherStudent  = require('../models/TeacherStudent');
 
 const h = (p) => bcrypt.hashSync(p, 12);
 

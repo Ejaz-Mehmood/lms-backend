@@ -1,18 +1,18 @@
 // Run order: 7th — seeds certificates, support requests, question bank, quizzes+attempts, assignments+submissions
 // Usage: node seeders/07-seed-extras.js  (from /var/www/lms-backend)
 
-require('./models/association');
-const sequelize           = require('./utils/database');
-const CourseDetails       = require('./models/CourseDetails');
-const Student             = require('./models/Student');
-const Certificate         = require('./models/Certificate');
-const SupportRequest      = require('./models/SupportRequest');
-const Assignment          = require('./models/Assignment/Assignment');
-const SubmittedAssignment = require('./models/Assignment/SubmittedAssignment');
-const QuestionBank        = require('./models/QuestionBank');
-const Quiz                = require('./models/Quiz/Quiz');
-const Question            = require('./models/Quiz/Question');
-const QuizAttempt         = require('./models/Quiz/QuizAttempt');
+require('../models/association');
+const sequelize           = require('../utils/database');
+const CourseDetails       = require('../models/CourseDetails');
+const Student             = require('../models/Student');
+const Certificate         = require('../models/Certificate');
+const SupportRequest      = require('../models/SupportRequest');
+const Assignment          = require('../models/Assignment/Assignment');
+const SubmittedAssignment = require('../models/Assignment/SubmittedAssignment');
+const QuestionBank        = require('../models/QuestionBank');
+const Quiz                = require('../models/Quiz/Quiz');
+const Question            = require('../models/Quiz/Question');
+const QuizAttempt         = require('../models/Quiz/QuizAttempt');
 
 const rnd     = (a, b) => Math.floor(Math.random() * (b - a + 1)) + a;
 const dateStr = (daysAgo) => { const d = new Date(); d.setDate(d.getDate() - daysAgo); return d.toISOString().slice(0, 10); };

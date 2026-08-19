@@ -1,19 +1,19 @@
 // Run order: 4th — seeds fees, salaries, payments, expenses, class sessions
 // Usage: node seeders/04-seed-finance.js  (from /var/www/lms-backend)
 
-require('./models/association');
-const sequelize        = require('./utils/database');
-const Admin            = require('./models/Admin');
-const Teacher          = require('./models/Teacher');
-const Student          = require('./models/Student');
-const Course           = require('./models/Course');
-const CourseDetails    = require('./models/CourseDetails');
-const Fee              = require('./models/Fee');
-const Salary           = require('./models/Salary');
-const Payment          = require('./models/Payment');
-const Expense          = require('./models/Expense');
-const ExpenseCategory  = require('./models/ExpenseCategory');
-const ClassSession     = require('./models/ClassSession');
+require('../models/association');
+const sequelize        = require('../utils/database');
+const Admin            = require('../models/Admin');
+const Teacher          = require('../models/Teacher');
+const Student          = require('../models/Student');
+const Course           = require('../models/Course');
+const CourseDetails    = require('../models/CourseDetails');
+const Fee              = require('../models/Fee');
+const Salary           = require('../models/Salary');
+const Payment          = require('../models/Payment');
+const Expense          = require('../models/Expense');
+const ExpenseCategory  = require('../models/ExpenseCategory');
+const ClassSession     = require('../models/ClassSession');
 
 // date helpers
 const addDays  = (d, n)  => { const x = new Date(d); x.setDate(x.getDate() + n); return x.toISOString().slice(0,10); };

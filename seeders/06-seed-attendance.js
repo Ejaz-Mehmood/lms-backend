@@ -1,13 +1,13 @@
 // Run order: 6th — seeds teacher and student attendance for the past 30 days
 // Usage: node seeders/06-seed-attendance.js  (from /var/www/lms-backend)
 
-require('./models/association');
-const sequelize         = require('./utils/database');
-const Teacher           = require('./models/Teacher');
-const Student           = require('./models/Student');
-const CourseDetails     = require('./models/CourseDetails');
-const TeacherAttendance = require('./models/TeacherAttendance');
-const Attendance        = require('./models/Attendance');
+require('../models/association');
+const sequelize         = require('../utils/database');
+const Teacher           = require('../models/Teacher');
+const Student           = require('../models/Student');
+const CourseDetails     = require('../models/CourseDetails');
+const TeacherAttendance = require('../models/TeacherAttendance');
+const Attendance        = require('../models/Attendance');
 
 const dateStr = (daysAgo) => {
   const d = new Date();
