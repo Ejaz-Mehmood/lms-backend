@@ -68,7 +68,7 @@ jobs:
             npm install --production
 
             # ── Restart with PM2 (pass critical vars explicitly to avoid cache issues) ──
-            if pm2 list | grep -q "lms-backend"; then
+            if pm2 describe lms-backend > /dev/null 2>&1; then
               NODE_ENV=production DB_USER=${{ secrets.DB_USER_PROD }} DB_PASSWORD=${{ secrets.DB_PASSWORD_PROD }} DB_NAME=${{ secrets.DB_NAME }} DB_HOST=${{ secrets.DB_HOST }} pm2 restart lms-backend --update-env
             else
               NODE_ENV=production DB_USER=${{ secrets.DB_USER_PROD }} DB_PASSWORD=${{ secrets.DB_PASSWORD_PROD }} DB_NAME=${{ secrets.DB_NAME }} DB_HOST=${{ secrets.DB_HOST }} pm2 start app.js --name lms-backend
